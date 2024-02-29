@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul type="circle">
+        <li>默认1</li>
+        <li>默认2</li>
+        <li>默认3</li>
+    </ul>
+
+    <ul type="disc">
+        <li>默认1</li>
+        <li>默认2</li>
+        <li>默认3</li>
+    </ul>
+
+    <ul type="square">
+        <li type="circle">默认1</li>
+        <li>默认2</li>
+        <li>默认3</li>
+    </ul>
+
+
+    <ul>
+        <li><b>默认1</b>
+            <ul>
+                <li>默认1</li>
+                <li>默认2</li>
+                <li>默认3</li>
+            </ul>
+        </li>
+        <li>默认2</li>
+        <li>默认3</li>
+    </ul>
+
+    <ol>
+        <li>默认1</li>
+        <li>默认2</li>
+        <li>默认3</li>
+    </ol>
+
+    <ol type="I">
+        <li>默认1</li>
+        <li>默认2</li>
+        <li>默认3</li>
+    </ol>
+
+
+    <ol type="1" start="4">
+        <li>默认1</li>
+        <li>默认2</li>
+        <li>默认3</li>
+    </ol>
+    
+    <ol type="a" start="4">
+        <li>默认1</li>
+        <li>默认2</li>
+        <li>默认3</li>
+    </ol>
+
+    <dl>
+        <dt>第一条</dt>
+        <dd>1</dd>
+        <dd>2</dd>
+        <dt>第二条</dt>
+        <dd>1</dd>
+        <dd>2</dd>
+    </dl>
+
+    <dl>
+        <dt>购物指南</dt>
+        <dd>
+            <a href="#">购物流程</a>
+            <a href="#">会员介绍</a>
+        </dd>
+    </dl>
+
+    <table border="1">
+        <caption align="left">test</caption>
+        <tr>
+            <td>11111</td>
+            <td>2</td>
+            <td>3</td>
+            <td rowspan="2">4</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td colspan="2">4</td>
+        </tr>
+    </table>
+
+    aaaa
+    <iframe src="./iframe.html"></iframe>
+    bbbb
+
+    <form>
+        姓名：<input value="hehe">haha<br>
+        昵称：<input value="heihei" readonly=""><br>
+        名字：<input type="text" value="name" disabled=""><br>
+        性别：<input type="radio" name="gender"  id="radio1" value="male" checked="">男
+        <input type="radio" name="gender"  id="radio2" value="female">女<br>
+        爱好：<input type="checkbox" name="love" value="eat">吃饭
+            <input type="checkbox" name="love" value="sleep">sleep
+            <input type="checkbox" name="love" value="bat">bat
+    </form>
+
+    <form>
+        <input type="button" value="normal_button"><br>
+        <input type="submit" value="commit_button"><br>
+        <input type="reset" value="reset_button"><br>
+        <input type="image" src="../06-HTML标签：图片标签/1.png" width="80" value="image_button">
+        <input type="file" value="文件选择框">
+    </form>
+
+    <form>
+        <select>
+            <option>1</option>
+            <option>2</option>
+            <option selected="">3</option>
+        </select>
+
+        <br><br><br>
+
+        <select size="3">
+            <option>1</option>
+            <option>2</option>
+            <option selected="">3</option>
+            <option>4</option>
+        </select>
+
+        <br><br><br>
+
+        <select multiple="">
+            <option>1</option>
+            <option selected="">2</option>
+            <option selected="">3</option>
+            <option>4</option>
+        </select>
+
+    </form>
+
+    <form>
+        <textarea name="txtInfo" cols="30" rows="10">
+            1111
+            2222
+            
+            3333
+        </textarea>
+    </form>
+
+    <form>
+        <fieldset>
+            <legend>帐号信息</legend>
+            姓名：<input value="hehe">haha<br>
+            昵称：<input value="heihei" readonly=""><br>
+            名字：<input type="text" value="name" disabled=""><br>
+        </fieldset>
+        <!-- id不能重复 -->
+        性别：<input type="radio" name="gender"  id="r1" value="male" checked=""/> <label for="r1">男</label>
+        <input type="radio" name="gender"  id="r2" value="female">女<br>
+        爱好：<input type="checkbox" name="love" value="eat">吃饭
+            <input type="checkbox" name="love" value="sleep">sleep
+            <input type="checkbox" name="love" value="bat">bat
+    </form>
+</body>
+</html>
