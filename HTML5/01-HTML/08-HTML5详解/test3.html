@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            font-family: "Microsoft Yahei";
+            font-size: 20px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            height: 30px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>表单属性</legend>
+            <label for="">
+                用户名：<input type="text" placeholder="例如：smyhave" autofocus name="userName" autocomplete="on" required />
+                <label for="">
+                    电话：<input type="tel" pattern="1\d{10}" />
+                </label>
+                <label for="">
+                    multiple的表单：<input type="file" multiple>
+                </label>
+                <input type="submit">
+            </label>
+        </fieldset>
+    </form>
+</body>
+
+</html>
