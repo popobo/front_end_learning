@@ -32,6 +32,26 @@
         nav a {
             display: block;
             width: 100px;
+            border-right: 1px solid #fff;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav a:last-child {
+            border-right: 0 none;
+        }
+
+        nav a.active {
+            background-color: #9baf9b;
+        }
+
+        .cont {
+            overflow: hidden;
+            display: none;
+        }
+
+        .cont ol {
+            line-height: 30px;
         }
     </style>
 </head>
@@ -88,7 +108,31 @@
         </section>
     </div>
     <script>
+        (function (key) {
+            var navs = document.querySelectorAll("nav a");
 
+            for (var i = 0; i < navs.length; i++) {
+                if (key == i) {
+                    navs[i].classList.add("active");
+                    var secId = navs[i].dataset["cont"];
+                    document.querySelector("#" + secId).style.display = "block";
+                }
+
+
+                navs[i].onclick = function () {
+                    // 排他
+                    var currentNav = document.querySelector(".active");
+                    var currentId = currentNav.dataset["cont"];
+                    currentNav.classList.remove("active")
+                    document.querySelector("#" + currentId).style.display = "none";
+
+                    this.classList.add("active");
+                    var myId = this.dataset["cont"];
+                    document.querySelector("#" + myId).style.display = "block";
+                }
+            }
+
+        })(0);
     </script>
 </body>
 
