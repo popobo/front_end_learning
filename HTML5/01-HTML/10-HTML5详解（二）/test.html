@@ -6,16 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box1 {
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        .box2 {
+            position: relative;
             width: 200px;
             height: 200px;
-            background-color: green;
+            left: 300px;
+            top: 100px;
+            border: 1px solid #000;
+            background-color: red;
         }
     </style>
 </head>
 
 <body>
-    <div class="box1" draggable="true"></div>
+    <div class="box" draggable="true"></div>
+    <div class="box2"></div>
+
+    <script>
+        var box = document.querySelector(".box");
+
+        box.ondragstart = function () {
+            console.log("drag begin");
+        }
+
+        box.ondragleave = function () {
+            console.log("drag leave");
+        }
+
+        box.ondragend = function () {
+            console.log("drag end");
+        }
+
+        box.ondrag = function () {
+            console.log("draging");
+        }
+
+        var box2 = document.querySelector(".box2");
+
+        box2.ondragenter = function () {
+            console.log("come in");
+        }
+
+        box2.ondragleave = function () {
+            console.log("go out");
+        }
+
+        box2.ondragover = function (e) {
+            e.preventDefault();
+            console.log("over");
+        }
+
+        box2.ondrop = function () {
+            console.log("release");
+        }
+    </script>
 </body>
 
 </html>
