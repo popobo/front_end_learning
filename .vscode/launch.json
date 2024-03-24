@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "http://127.0.0.1:3000/HTML5/01-HTML/10-HTML5详解（二）/test5.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/HTML5/01-HTML/10-HTML5详解（二）/test5.html"
+        },
+        {
+            "type": "chrome",
+            "name": "http://127.0.0.1:3000/HTML5/01-HTML/11-HTML5详解（三）/local_stroage.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/HTML5/01-HTML/11-HTML5详解（三）/local_stroage.html"
+        }
+    ]
+}
