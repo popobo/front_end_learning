@@ -69,3 +69,21 @@
         - class和id的区别
         - 各种选择器
         - css两个性质
+- 06-CSS盒模型详解
+    - 盒子模型
+        - 前言
+        - 盒子的区域
+        - 标准盒模型和IE模型
+        - <body>标签也有margin
+    - 认识width、height
+    - 认识padding
+        - padding区域也有颜色
+        - padding有四个方向
+        - 一些题目
+        - 一些元素，默认带有padding
+    - 认识border
+        - border-style
+        - border拆分
+        - border-image 属性
+        - 举例1：利用 border 属性画一个三角形（小技巧）
+        - 举例2：利用 border 属性画一个三角形（更推荐的技巧）
