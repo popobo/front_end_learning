@@ -6,45 +6,33 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: {
-        firstName: "John",
-        lastName: "Doe",
-      },
-      company: "AAA",
+      monsters: [
+        {
+          name: "Frankenstein",
+          id: "1",
+        },
+        {
+          name: "Dracula",
+          id: "2",
+        },
+        {
+          name: "Zombie",
+          id: "3",
+        },
+      ],
     };
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hi, {this.state.name.firstName} {this.state.name.lastName}, I work
-            in {this.state.company}
-          </p>
-          <button
-            onClick={() => {
-              //asynchronous
-              this.setState(
-                () => {
-                  return {
-                    name: {
-                      firstName: "AAA",
-                      lastName: "BBB",
-                    },
-                  };
-                },
-                // only called after all the state changes are applied
-                () => {
-                  console.log(this.state);
-                }
-              );
-            }}
-          >
-            Change Name
-          </button>
-        </header>
+        {this.state.monsters.map((monster) => {
+          return (
+            <div key={monster.id}>
+              <h1>{monster.name}</h1>
+            </div>
+          );
+        })}
       </div>
     );
   }
