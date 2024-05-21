@@ -26,13 +26,20 @@ class App extends Component {
           <button
             onClick={() => {
               //asynchronous
-              this.setState({
-                name: {
-                  firstName: "aaa",
-                  lastName: "bbb",
+              this.setState(
+                () => {
+                  return {
+                    name: {
+                      firstName: "AAA",
+                      lastName: "BBB",
+                    },
+                  };
                 },
-              });
-              console.log(this.state);
+                // only called after all the state changes are applied
+                () => {
+                  console.log(this.state);
+                }
+              );
             }}
           >
             Change Name
