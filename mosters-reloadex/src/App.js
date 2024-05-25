@@ -10,6 +10,7 @@ const App = () => {
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilteredMonsters] = useState(monsters);
   const [stringFiled, setStringField] = useState("");
+  const [title, setTitle] = useState("monster rolodex");
 
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLowerCase();
@@ -33,21 +34,22 @@ const App = () => {
     );
   }, [monsters, searchString]);
 
-  const onStringChange = (event) => {
-    setStringField(event.target.value);
+  const onTitleChange = (event) => {
+    setTitle(event.target.value);
   };
 
   return (
     <div className="App">
-      <h1 className="app-title">monster rolodex</h1>
+      <h1 className="app-title">{title}</h1>
       <SearchBox
         onChangeHandler={onSearchChange}
         placeholder="search monster"
         className="monster-search-box"
       />
+      <br />
       <SearchBox
-        onChangeHandler={onStringChange}
-        placeholder="set string"
+        onChangeHandler={onTitleChange}
+        placeholder="search title"
         className="monster-search-box"
       />
 
