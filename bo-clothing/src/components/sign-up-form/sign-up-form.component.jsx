@@ -3,7 +3,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
-import FormInput from "../form-input/form-input.compoent";
+import FormInput from "../form-input/form-input.component";
 import "./sign-up-form.styles.scss";
 import Button from "../button/button.component";
 
@@ -23,6 +23,10 @@ const SignUpForm = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { displayName, email, password, confirmPassword } = formFields;
@@ -36,6 +40,7 @@ const SignUpForm = () => {
         password
       );
       await createUserDocumentFromAuth(user, { displayName });
+      resetFormFields();
     } catch (e) {
       if (e.code === "auth/email-already-in-use") {
         alert("Email already in use");
@@ -43,7 +48,6 @@ const SignUpForm = () => {
       }
       console.log("User creation", e);
     }
-    // const createdAt = new Date();
   };
 
   return (
@@ -56,7 +60,7 @@ const SignUpForm = () => {
           inputOptions={{
             name: "displayName",
             value: displayName,
-            handleChange: handleChange,
+            onChange: handleChange,
             required: true,
           }}
         />
@@ -67,7 +71,7 @@ const SignUpForm = () => {
             type: "email",
             name: "email",
             value: email,
-            handleChange: handleChange,
+            onChange: handleChange,
             required: true,
           }}
         />
@@ -78,7 +82,7 @@ const SignUpForm = () => {
             type: "password",
             name: "password",
             value: password,
-            handleChange: handleChange,
+            onChange: handleChange,
             required: true,
           }}
         />
@@ -89,12 +93,12 @@ const SignUpForm = () => {
             type: "password",
             name: "confirmPassword",
             value: confirmPassword,
-            handleChange: handleChange,
+            onChange: handleChange,
             required: true,
           }}
         />
 
-        <Button buttonType="google" type="submit">
+        <Button buttonType="default" type="submit">
           Sign Up
         </Button>
       </form>
