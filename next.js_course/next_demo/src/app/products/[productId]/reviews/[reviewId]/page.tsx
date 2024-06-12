@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 export default function ReviewDetails({
   params,
 }: {
@@ -6,6 +8,9 @@ export default function ReviewDetails({
     reviewId: string;
   };
 }) {
+  if (parseInt(params.reviewId) > 100) {
+    notFound();
+  }
   return (
     <h1>
       Review Details {params.reviewId} for product {params.productId}
