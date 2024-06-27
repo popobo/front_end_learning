@@ -1,0 +1,10 @@
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: discord-clone
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
