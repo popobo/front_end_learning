@@ -23,9 +23,9 @@ model Profile {
     createAt DateTime @default(now())
     updateAt DateTime @updatedAt
 
-    Member  Member[]
-    server  Server[]
-    Channel Channel[]
+    members  Member[]
+    servers  Server[]
+    channels Channel[]
 }
 
 model Server {
@@ -39,8 +39,8 @@ model Server {
 
     createAt DateTime  @default(now())
     updateAt DateTime  @updatedAt
-    Member   Member[]
-    Channel  Channel[]
+    members  Member[]
+    channels Channel[]
 
     @@index([profileId])
 }
