@@ -2,16 +2,23 @@
 
 import { X } from "lucide-react";
 import Image from "next/image";
-
+import styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { UploadDropzone } from "@/lib/uploadthing";
-import "@uploadthing/react/styles.css";
-import { error } from "console";
 
 interface FileUploadProps {
   onChange: (url?: string) => void;
   value: string;
   endpoint: "serverImage" | "messageFile";
 }
+
+const UploadThingStyles = createGlobalStyle`
+  @import url('@uploadthing/react/styles.css');
+`;
+
+const UploadContainer = styled.div`
+  /* 可能需要的额外样式 */
+`;
 
 export const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
   const fileType = value?.split(".").pop();
@@ -31,14 +38,17 @@ export const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
   }
 
   return (
-    <UploadDropzone
-      endpoint={endpoint}
-      onClientUploadComplete={(res) => {
-        onChange(res?.[0].url);
-      }}
-      onUploadError={(error: Error) => {
-        console.log(error);
-      }}
-    />
+    <UploadContainer>
+      <UploadThingStyles />
+      <UploadDropzone
+        endpoint={endpoint}
+        onClientUploadComplete={(res) => {
+          onChange(res?.[0].url);
+        }}
+        onUploadError={(error: Error) => {
+          console.log(error);
+        }}
+      />
+    </UploadContainer>
   );
 };
